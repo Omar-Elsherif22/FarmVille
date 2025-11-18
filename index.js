@@ -40,6 +40,9 @@ app.use(express.json());
 // routes
 app.use("/auth", authRouter);
 app.use("/farm", farmRouter);
+app.get("/", (req, res, next) => {
+    return res.json({ message: "Welcome to Smart Farm API" });
+});
 
 // page not found handler
 app.all("*", (req, res, next) => {
