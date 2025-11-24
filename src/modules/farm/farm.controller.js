@@ -17,7 +17,7 @@ export const createFarm = asyncHandler(async (req, res, next) => {
 
 export const createFarmReads = asyncHandler(async (req, res, next) => {
     // data from request
-    const { temp, moisture, cond, ph, nitrogen, phosphorus, potassium, Salinity, airTemp } = req.body;
+    const { temp, moisture, cond, ph, nitrogen, phosphorus, potassium, salinity, airTemp } = req.body;
     // validate farm existence
     const farm = await Farm.findOne({ user: req.user._id });
     if (!farm)
@@ -32,7 +32,7 @@ export const createFarmReads = asyncHandler(async (req, res, next) => {
         nitrogen,
         phosphorus,
         potassium,
-        Salinity,
+        salinity,
         airTemp
     });
     // send response

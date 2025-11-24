@@ -15,6 +15,6 @@ export const createFarmReads = joi.object({
     nitrogen: joi.number().required(),
     phosphorus: joi.number().required(),
     potassium: joi.number().required(),
-    Salinity: joi.number().required(),
+    salinity: joi.number().required(),
     airTemp: joi.number().required(),
 }).required();

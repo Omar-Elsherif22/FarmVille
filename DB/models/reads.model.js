@@ -10,7 +10,7 @@ const readsSchema = new Schema({
     nitrogen: Number,
     phosphorus: Number,
     potassium: Number,
-    Salinity: Number,
+    salinity: Number,
     airTemp: Number,
 }, { timestamps: true });
 
