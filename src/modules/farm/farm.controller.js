@@ -17,7 +17,7 @@ export const createFarm = asyncHandler(async (req, res, next) => {
 
 export const createFarmReads = asyncHandler(async (req, res, next) => {
     // data from request
-    const { temperature, moisture, conductivity, ph, nitrogen, phosphorus, potassium, Salinity } = req.body;
+    const { temp, moisture, cond, ph, nitrogen, phosphorus, potassium, Salinity, airTemp } = req.body;
     // validate farm existence
     const farm = await Farm.findOne({ user: req.user._id });
     if (!farm)
@@ -25,14 +25,15 @@ export const createFarmReads = asyncHandler(async (req, res, next) => {
     // create farm reads in db
     await Reads.create({
         farmId: farm._id,
-        temperature,
+        temp,
         moisture,
-        conductivity,
+        cond,
         ph,
         nitrogen,
         phosphorus,
         potassium,
-        Salinity
+        Salinity,
+        airTemp
     });
     // send response
     return res.status(201).json({ success: true, message: "Farm reads created successfully!" })

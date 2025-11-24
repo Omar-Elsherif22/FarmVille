@@ -8,12 +8,13 @@ export const createFarm = joi.object({
 
 // createFarmReads
 export const createFarmReads = joi.object({
-    temperature: joi.number().required(),
+    temp: joi.number().required(),
     moisture: joi.number().required(),
-    conductivity: joi.number().required(),  
+    cond: joi.number().required(),  
     ph: joi.number().required(),
     nitrogen: joi.number().required(),
     phosphorus: joi.number().required(),
     potassium: joi.number().required(),
     Salinity: joi.number().required(),
+    ariTemp: joi.number().required(),
 }).required();
