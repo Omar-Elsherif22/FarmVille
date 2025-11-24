@@ -11,7 +11,7 @@ const readsSchema = new Schema({
     phosphorus: Number,
     potassium: Number,
     Salinity: Number,
-    ariTemp: Number,
+    airTemp: Number,
 }, { timestamps: true });
 
 export const Reads = model("Reads", readsSchema);
