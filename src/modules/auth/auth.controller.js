@@ -37,5 +37,5 @@ export const login = asyncHandler(async (req, res, next) => {
     // Save token in token model
     await Token.create({ token, user: user._id, agent: req.headers['user-agent'] });
     // send response
-    return res.json({ success: true, rseults: { token } });
+    return res.json({ success: true, results: { token } });
 });
